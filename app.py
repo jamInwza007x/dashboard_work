@@ -7,7 +7,7 @@ df = px.data.gapminder()
 app = dash.Dash(__name__)
 
 app.layout = html.Div([
-    html.H1("AI Engineering Dashboard"),
+    html.H1("AI Engineering Dashboard by James"),
     dcc.Slider(
         id='year-slider',
         min=df['year'].min(),
@@ -21,21 +21,19 @@ app.layout = html.Div([
         dcc.Graph(id='pie-chart')
     ], id='graph-container')
 ])
+
 @app.callback(
     [Output('scatter-plot', 'figure'),
      Output('bar-chart', 'figure'),
      Output('pie-chart', 'figure')],
     [Input('year-slider', 'value')]
-    )
+)
 def update_graphs(selected_year):
     filtered_df = df[df.year == selected_year]
-
     fig1 = px.scatter(filtered_df, x="gdpPercap", y="lifeExp", size="pop", color="continent", log_x=True, title="Life Exp vs GDP")
     fig2 = px.bar(filtered_df, x="continent", y="pop", title="Population by Continent")
-    fig3 = px.pie(filtered_df, values='pop', names='continent', title="Population Distribution")
-    
+    fig3 = px.pie(filtered_df, values='pop', names='continent', title="Population Share")
     return fig1, fig2, fig3
-
 
 if __name__ == '__main__':
     app.run_server(debug=True)
