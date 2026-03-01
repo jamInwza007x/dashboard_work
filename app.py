@@ -21,5 +21,10 @@ app.layout = html.Div([
         dcc.Graph(id='pie-chart')
     ], id='graph-container')
 ])
-@app.callback(...)
+@app.callback(
+    [Output('scatter-plot', 'figure'),
+     Output('bar-chart', 'figure'),
+     Output('pie-chart', 'figure')],
+    [Input('year-slider', 'value')]
+    )
 def update_graphs(selected_year):
