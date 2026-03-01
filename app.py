@@ -17,7 +17,8 @@ app.layout = html.Div([
     ),
     html.Div([
         dcc.Graph(id='scatter-plot'),
-        dcc.Graph(id='bar-chart')
+        dcc.Graph(id='bar-chart'),
+        dcc.Graph(id='pie-chart')
     ], id='graph-container')
 ])
 @app.callback(...)
