@@ -29,3 +29,6 @@ app.layout = html.Div([
     )
 def update_graphs(selected_year):
     filtered_df = df[df.year == selected_year]
+
+    fig1 = px.scatter(filtered_df, x="gdpPercap", y="lifeExp", size="pop", color="continent", log_x=True, title="Life Exp vs GDP")
+    fig2 = px.bar(filtered_df, x="continent", y="pop", title="Population by Continent")
