@@ -35,3 +35,7 @@ def update_graphs(selected_year):
     fig3 = px.pie(filtered_df, values='pop', names='continent', title="Population Distribution")
     
     return fig1, fig2, fig3
+
+
+if __name__ == '__main__':
+    app.run_server(debug=True)
