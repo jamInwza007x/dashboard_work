@@ -36,4 +36,4 @@ def update_graphs(selected_year):
     return fig1, fig2, fig3
 
 if __name__ == '__main__':
-    app.run_server(debug=True)
+    app.run(debug=True)
