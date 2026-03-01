@@ -32,3 +32,6 @@ def update_graphs(selected_year):
 
     fig1 = px.scatter(filtered_df, x="gdpPercap", y="lifeExp", size="pop", color="continent", log_x=True, title="Life Exp vs GDP")
     fig2 = px.bar(filtered_df, x="continent", y="pop", title="Population by Continent")
+    fig3 = px.pie(filtered_df, values='pop', names='continent', title="Population Distribution")
+    
+    return fig1, fig2, fig3
