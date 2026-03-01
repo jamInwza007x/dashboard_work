@@ -14,3 +14,4 @@ app.layout = html.Div([html.H1("AI Engineering Dashboard"),
                         value=df['year'].min(),
                         marks={str(y): str(y) for y in df['year'].unique()}
     ),
+    html.Div([], id='graph-container')
