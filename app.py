@@ -21,3 +21,4 @@ app.layout = html.Div([
     ], id='graph-container')
 ])
 @app.callback(...)
+def update_graphs(selected_year):
