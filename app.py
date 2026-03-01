@@ -28,3 +28,4 @@ app.layout = html.Div([
     [Input('year-slider', 'value')]
     )
 def update_graphs(selected_year):
+    filtered_df = df[df.year == selected_year]
